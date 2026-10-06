@@ -1,5 +1,7 @@
 package com.demo;
 
+import java.util.Objects;
+
 public class MyArrayList<E> {
 	private E arr[] = null;
 	private int count = 0;
@@ -23,7 +25,7 @@ public class MyArrayList<E> {
 	private E[] grow() {
 	    int newCapacity = arr.length == 0
 	            ? 1
-	            : arr.length + (arr.length >> 1);
+	            : arr.length + Math.max(1, arr.length >> 1);
 
 	    return java.util.Arrays.copyOf(arr, newCapacity);
 	}
@@ -104,7 +106,7 @@ public class MyArrayList<E> {
 
 	public boolean contains(E element) {
 		for (int i = 0; i < size(); i++) {
-			if (java.util.Objects.equals(arr[i], element)) {
+			if (Objects.equals(arr[i], element)) {
 				return true;
 			}
 		}
@@ -113,7 +115,7 @@ public class MyArrayList<E> {
 
 	public int indexOf(E element) {
 		for (int i = 0; i < size(); i++) {
-			if (arr[i] == element) {
+			if (Objects.equals(arr[i], element)) {
 				return i;
 			}
 		}
@@ -123,7 +125,7 @@ public class MyArrayList<E> {
 
 	public int lastIndexOf(E element) {
 		for (int i = size() - 1; i >= 0; i--) {
-			if (arr[i] == element) {
+			if (Objects.equals(arr[i], element)){
 				return i;
 			}
 		}

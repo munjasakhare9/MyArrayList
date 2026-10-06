@@ -1,0 +1,40 @@
+# Compiled Java files
+*.class
+*.properties
+
+# Log files
+*.log
+*.log.gz
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Maven
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse
+bin/
+.settings/
+.metadata
+.project
+.classpath
+.externalToolBuilders/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# OS generated files
+.DS_Store
+Thumbs.db
